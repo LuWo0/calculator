@@ -1,9 +1,12 @@
 :root {
     --bg-color: #1C1C1C;
-    --num-bg-color: #505050;
+    --num-bg-color:	hsl(0, 0%, 31%);
+    --num-bg-color-hover: hsl(0, 0%, 62%);
     --num-txt-color: white;
-    --symbol-bg-color: #FF9500;
-    --clear-bg-color: #D4D4D2;
+    --symbol-bg-color: hsl(35, 100%, 50%); 
+    --symbol-bg-colo-hover: hsl(35, 100%, 75%);
+    --clear-bg-color: hsl(60, 2%, 83%);
+    --clear-bg-color-hover: hsl(60, 2%, 58%);
 }
 
 * {
@@ -13,7 +16,7 @@
     box-sizing: border-box;
     background-color: var(--bg-color);
     font-weight: 700;
-    
+    color: var(--num-txt-color);
 }
 
 .calc-container {
@@ -29,11 +32,11 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--num-txt-color);
+    gap: 18px;
     font-size: 1em;
     line-height: 1em;
     cursor: pointer;
-    padding: 3em;
+    padding: 2.6em;
     width: 1em;
     height: 1em;
     border-radius: 50%;
@@ -43,15 +46,50 @@ button {
 
 .double-size-btn {
     grid-column: span 2;
+    width: 95%;
+    border-radius: 55px;
+    
+}
+
+.output-container {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding: 15px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.current-number {
+    color:hsl(60, 2%, 80%);
+    font-size: 2.75em;
+}
+
+.previous-number {
+    color:hsl(60, 2%, 60%);
+    font-size: 1.25em;
 }
 
 .clear {
     background-color: var(--clear-bg-color);
     color: var(--num-bg-color);
 }
+.clear:hover {
+    background-color: var(--clear-bg-color-hover);
+}
+
 .symbol {
     background-color: var(--symbol-bg-color);
 }
+.symbol:hover {
+    background-color: var(--symbol-bg-colo-hover);
+}
+
 .number {
     background-color: var(--num-bg-color);
+}
+.number:hover {
+    background-color: var(--num-bg-color-hover);
 }
